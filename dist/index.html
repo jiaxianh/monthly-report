@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>月报索引 Monthly Reports</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/framer-motion@11/dist/framer-motion.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            aurora: {
+              DEFAULT: '#0066FF',
+              light: 'rgba(0, 102, 255, 0.15)',
+              mid: 'rgba(0, 102, 255, 0.35)',
+              strong: 'rgba(0, 102, 255, 0.6)',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background: #ffffff; }
+  </style>
+</head>
+<body class="min-h-screen bg-white text-gray-900 antialiased">
+  <div class="max-w-6xl mx-auto px-6 py-16">
+    <header class="mb-20">
+      <h1 class="text-5xl md:text-7xl font-bold text-gray-900 tracking-tight">月报索引</h1>
+      <p class="mt-3 text-sm text-gray-500 uppercase tracking-widest">Monthly Reports</p>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="report-list">
+      <a href="reports/2025-11/report.html" class="group block rounded-2xl border-2 border-gray-200 p-8 transition-all hover:border-aurora hover:bg-aurora-light focus:outline-none focus:ring-2 focus:ring-aurora focus:ring-offset-2">
+        <span class="text-4xl font-bold text-aurora">2025.11</span>
+        <p class="mt-2 text-xl font-bold text-gray-900 group-hover:text-aurora">多语言月报</p>
+        <p class="mt-1 text-xs text-gray-500 uppercase">Report</p>
+        <span class="mt-4 inline-flex items-center text-sm text-aurora">
+          <i class="fas fa-arrow-right mr-2"></i> 查看
+        </span>
+      </a>
+    </div>
+
+    <div class="mt-24 flex justify-center opacity-40">
+      <svg width="120" height="48" viewBox="0 0 120 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-aurora">
+        <path d="M0 24 L40 24 M40 24 L80 8 M80 8 L120 24 M80 24 L80 40" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+  </div>
+
+  <style>
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+  </style>
+  <script>
+    (function() {
+      var list = document.getElementById('report-list');
+      if (!list) return;
+      var cards = list.querySelectorAll('a');
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '-40px 0px', threshold: 0 });
+      cards.forEach(function(el, i) {
+        el.classList.add('reveal');
+        el.style.transitionDelay = (i * 0.08) + 's';
+        observer.observe(el);
+      });
+    })();
+  </script>
+</body>
+</html>

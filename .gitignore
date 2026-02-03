@@ -1,0 +1,15 @@
+# 环境变量与密钥（切勿提交）
+.env
+.env.local
+.env.*.local
+
+# 虚拟环境
+.venv/
+venv/
+env/
+
+# 系统与编辑器
+.DS_Store
+.idea/
+*.swp
+*.swo
