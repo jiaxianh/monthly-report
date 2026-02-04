@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026.1 多语言月报 | POIZON Global</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        aurora: {
+                            DEFAULT: '#0066FF',
+                            light: 'rgba(0,102,255,0.05)',
+                            mid: 'rgba(0,102,255,0.15)',
+                            strong: 'rgba(0,102,255,0.35)',
+                            solid: '#0066FF'
+                        },
+                        gray: { 50: '#F9FAFB', 100: '#F3F4F6', 400: '#9CA3AF', 800: '#1F2937', 900: '#111827' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #ffffff; color: #111827; -webkit-font-smoothing: antialiased; }
+        .reveal-section { opacity: 0; transform: translateY(32px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal-section.active { opacity: 1; transform: translateY(0); }
+        .card { transition: all 0.3s ease; border: 1px solid #f3f4f6; }
+        .card-hover:hover { box-shadow: 0 10px 30px -10px rgba(0, 102, 255, 0.15); border-color: rgba(0, 102, 255, 0.3); transform: translateY(-2px); }
+    </style>
+</head>
+<body class="bg-white">
+    <header class="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-aurora rounded-lg flex items-center justify-center text-white font-bold">P</div>
+                <div>
+                    <h1 class="text-xl font-bold tracking-tight text-gray-900">2026.1 多语言月报</h1>
+                    <p class="text-xs text-gray-400 uppercase tracking-wider">POIZON Global Localization Team</p>
+                </div>
+            </div>
+            <div class="text-sm font-medium text-aurora bg-aurora-light px-3 py-1 rounded-full">Monthly Report</div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 pt-28 pb-20 space-y-24">
+        <!-- 核心亮点：搜索 / 评论 / 图片 / 视频 -->
+        <section class="reveal-section">
+            <div class="mb-8">
+                <h2 class="text-4xl font-bold text-gray-900 mb-2">核心亮点</h2>
+                <p class="text-gray-400 uppercase tracking-wider text-sm">Highlights</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="card p-6 rounded-2xl bg-white card-hover">
+                    <div class="text-aurora mb-3"><i class="fa-solid fa-magnifying-glass text-2xl"></i></div>
+                    <h3 class="font-bold text-lg mb-1">搜索</h3>
+                    <p class="text-gray-500 text-sm">语种识别 99.99%，俄/韩头部搜索词译准率约 99.94% / 99.6%，人工词条与机翻刷新优化召回与相关性。</p>
+                </div>
+                <div class="card p-6 rounded-2xl bg-white card-hover">
+                    <div class="text-aurora mb-3"><i class="fa-solid fa-comments text-2xl"></i></div>
+                    <h3 class="font-bold text-lg mb-1">评论</h3>
+                    <p class="text-gray-500 text-sm">中俄/中韩评价翻译通过率 91% / 95%，1k+ 敏感词库与过滤规则已落地，推进 AB 实验验证提单率提升。</p>
+                </div>
+                <div class="card p-6 rounded-2xl bg-white card-hover">
+                    <div class="text-aurora mb-3"><i class="fa-solid fa-image text-2xl"></i></div>
+                    <h3 class="font-bold text-lg mb-1">图片</h3>
+                    <p class="text-gray-500 text-sm">Dify 打通 Nano Banana Pro 图片翻译链路，单张成本从约 0.6 元降至约 0.06 元，推进 587 后台新链路与工作流。</p>
+                </div>
+                <div class="card p-6 rounded-2xl bg-white card-hover">
+                    <div class="text-aurora mb-3"><i class="fa-solid fa-video text-2xl"></i></div>
+                    <h3 class="font-bold text-lg mb-1">视频</h3>
+                    <p class="text-gray-500 text-sm">视频打标工作流上线（亚洲脸/含中文过滤准召率 &gt;95%），提效约 20 倍、降本约 99%，调研视频翻译能力与三方合作。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 一、OKR -->
+        <section class="reveal-section">
+            <div class="mb-8">
+                <h2 class="text-4xl font-bold text-gray-900 mb-2">一、OKR 完成情况</h2>
+                <p class="text-gray-400 uppercase tracking-wider text-sm">OKR Overview</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-gray-700">
+                <div class="flex items-start gap-2"><i class="fas fa-check text-aurora mt-1"></i><span>优化多语言商品内容，提升商详提单率 1%</span></div>
+                <div class="flex items-start gap-2"><i class="fas fa-check text-aurora mt-1"></i><span>优化多语言搜索，提升 UV 价值 1%</span></div>
+                <div class="flex items-start gap-2"><i class="fas fa-check text-aurora mt-1"></i><span>优化多语言用户评价，提升商详提单率 1%</span></div>
+            </div>
+        </section>
+
+        <!-- 二、提升用户价值 - 商品 -->
+        <section class="reveal-section">
+            <div class="mb-8">
+                <h2 class="text-4xl font-bold text-gray-900 mb-2">二、提升用户价值 · 商品</h2>
+                <p class="text-gray-400 uppercase tracking-wider text-sm">User Value · Merchandise</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="card p-8 rounded-3xl bg-gradient-to-br from-white to-aurora-light border border-aurora-mid">
+                    <span class="bg-aurora text-white px-3 py-1 rounded-full text-xs font-bold mb-2 inline-block">KA</span>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">AI 商品多语言长图文产出</h3>
+                    <p class="text-gray-600 text-sm mb-3">AIGC 长图文工作流产品化，将商品数据、Dify 工作流与商品后台打通。</p>
+                    <p class="text-xs text-gray-500"><strong>Gap:</strong> 尚未进行 AB 实验验证策略效果。<strong>Next:</strong> 跟进商详场景 AB 实验效果，DDL 2 月底。</p>
+                </div>
+                <div class="card p-8 rounded-3xl bg-white">
+                    <span class="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-xs font-bold mb-2 inline-block">KA</span>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">商品信息质量提升</h3>
+                    <p class="text-sm text-gray-600 mb-2">英、俄翻译准确率 90%，韩 80%；BBMAX 标题系列机翻优化已落地。</p>
+                    <p class="text-3xl font-bold text-aurora mb-2">81.7%</p>
+                    <p class="text-xs text-gray-500">韩语词条覆盖率，未达 90%。3C 配件 1.5%、玩具乐器 0.3%。Next: 提取类目重要元素、XBB 重点类目词条覆盖调整，DDL 2 月底。</p>
+                </div>
+                <div class="card p-8 rounded-3xl bg-white">
+                    <span class="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-xs font-bold mb-2 inline-block">KA</span>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">图片翻译工作流与降本</h3>
+                    <p class="text-sm text-gray-600 mb-2">Dify 调用 Nano Banana Pro 跑通图片翻译链路；单张价格 0.6 元→0.06 元。</p>
+                    <p class="text-xs text-gray-500"><strong>Gap:</strong> 线上准确率 68%~72%。<strong>Next:</strong> 587 后台开发新链路与工作流，DDL 2 月底。</p>
+                </div>
+                <div class="card p-8 rounded-3xl bg-white">
+                    <span class="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-xs font-bold mb-2 inline-block">KA</span>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">视频翻译调研与寻源</h3>
+                    <p class="text-sm text-gray-600 mb-2">视频打标工作流完成，准召率&gt;95%，提效 20 倍、降本 99%；单视频翻译约 0.2 元。</p>
+                    <p class="text-xs text-gray-500"><strong>Gap:</strong> 视频翻译需引入三方能力。<strong>Next:</strong> 与商品中台推进三方合作，DDL 2 月底。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 搜索 -->
+        <section class="reveal-section">
+            <div class="mb-8">
+                <h2 class="text-4xl font-bold text-gray-900 mb-2">提升用户价值 · 搜索</h2>
+                <p class="text-gray-400 uppercase tracking-wider text-sm">Search</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="card p-8 rounded-3xl bg-white border-l-4 border-aurora">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">语种识别与俄英/韩英搜索翻译</h3>
+                    <p class="text-5xl font-bold text-aurora mb-2">99.99%</p>
+                    <p class="text-sm text-gray-500 mb-3">语种识别。俄整体 93.6%、头部 99.94%；韩整体 86.6%、头部 99.6%。</p>
+                    <p class="text-xs text-gray-600">俄英新增人工 380 条、机翻刷新 86369 条；韩英新增人工 219 条、机翻刷新 449 条。Gap: 俄 37 条错译、韩 70 条错译（拼写/品牌系列等）。Next: 俄译英/韩译英模型优化，gpt-4o 切换 deepseek v3，DDL 2 月。</p>
+                </div>
+                <div class="card p-8 rounded-3xl bg-white">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">中英搜索词（买家侧）</h3>
+                    <p class="text-sm text-gray-600 mb-2">新增头部搜索词人工翻译 850 条；Kimi 2.5 Agent 检查 1.2W 人工词条，修复 13 条错误。</p>
+                    <p class="text-xs text-gray-500">Gap: 2 月中旬开启 AB 实验待分析。Next: 完成中英搜索词翻译 AB 实验，DDL 3 月初。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 评价 -->
+        <section class="reveal-section">
+            <div class="mb-8">
+                <h2 class="text-4xl font-bold text-gray-900 mb-2">提升用户价值 · 评价</h2>
+                <p class="text-gray-400 uppercase tracking-wider text-sm">Reviews</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="card p-8 rounded-3xl bg-white">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">中→俄/韩 评论 AI 翻译与风控</h3>
+                    <p class="text-4xl font-bold text-aurora mb-2">91% / 95%</p>
+                    <p class="text-sm text-gray-500 mb-2">中俄/中韩翻译通过率。1k+ 敏感词库，优化过滤规则与语法。</p>
+                    <p class="text-xs text-gray-500">Gap: 俄/韩仍有部分 badcase（价格、尺码未过滤）。Next: 调整 prompt 过滤；AB 实验验证用户价值，DDL 2 月底。</p>
+                </div>
+                <div class="card p-8 rounded-3xl bg-white">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">商品内容自动质检与修复（QE+APE）</h3>
+                    <p class="text-sm text-gray-600 mb-2">AI 翻译巡检接入词条 RAG；BBMAX/KR 属性巡检与幻觉修复。BBMAX 动销 99.94%、曝光 50.04%；KR 动销 99.77%、曝光 99.91%。</p>
+                    <p class="text-xs text-gray-500">Gap: 人工评测成本高、覆盖率约 1%。Next: 质控体系与评测集、语义准确性及线上反馈收集，DDL 2 月底。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 保障用户体验 -->
+        <section class="reveal-section">
+            <div class="mb-8">
+                <h2 class="text-4xl font-bold text-gray-900 mb-2">三、保障用户体验</h2>
+                <p class="text-gray-400 uppercase tracking-wider text-sm">User Experience</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="card p-6 rounded-2xl bg-white card-hover">
+                    <div class="w-10 h-10 rounded-full bg-aurora-light flex items-center justify-center text-aurora mb-4"><i class="fa-solid fa-globe"></i></div>
+                    <h3 class="font-bold text-gray-900 mb-2">鉴别 2 期</h3>
+                    <p class="text-xs text-gray-500">新增印尼、越南、蒙古、印地、菲律宾语及日期/时间/数字/排序本地化。</p>
+                </div>
+                <div class="card p-6 rounded-2xl bg-white card-hover">
+                    <div class="w-10 h-10 rounded-full bg-aurora-light flex items-center justify-center text-aurora mb-4"><i class="fa-solid fa-list-check"></i></div>
+                    <h3 class="font-bold text-gray-900 mb-2">PINKO 多语言 2 期</h3>
+                    <p class="text-xs text-gray-500">新增质检项接入词库自动翻译流程。招聘 native 实习生走查，DDL 2 月底。</p>
+                </div>
+                <div class="card p-6 rounded-2xl bg-white card-hover">
+                    <div class="w-10 h-10 rounded-full bg-aurora-light flex items-center justify-center text-aurora mb-4"><i class="fa-solid fa-language"></i></div>
+                    <h3 class="font-bold text-gray-900 mb-2">日语搜索与商品本地化</h3>
+                    <p class="text-xs text-gray-500">日语界面接入日语搜索词；建设日语类目与商品信息翻译。日语搜索提需落地、日韩月度评测机制，DDL 2 月。</p>
+                </div>
+                <div class="card p-6 rounded-2xl bg-white card-hover">
+                    <div class="w-10 h-10 rounded-full bg-aurora-light flex items-center justify-center text-aurora mb-4"><i class="fa-solid fa-headset"></i></div>
+                    <h3 class="font-bold text-gray-900 mb-2">客服 AI 翻译与优化</h3>
+                    <p class="text-xs text-gray-500">Dify 工作流实现客服多语言自动翻译与优化。能力接入 DDL 2 月底。</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+                <div class="card p-6 rounded-2xl bg-gray-50">
+                    <h3 class="font-bold text-gray-900 mb-2">POIZON Global / 智能运营英语优化</h3>
+                    <p class="text-xs text-gray-500">P1 走查：Global 217 条 Bug、智能运营 85 条。Gap: 硬编码严重。Next: 采访海外 AM 定优先级，DDL 2 月中。</p>
+                </div>
+                <div class="card p-6 rounded-2xl bg-gray-50">
+                    <h3 class="font-bold text-gray-900 mb-2">产品界面迭代内走查（v5.84~5.85）</h3>
+                    <p class="text-xs text-gray-500">验收约 756 条文案、30 个 PRD 95%；多语言缺陷 10 个修复率 100%。RPA 自动化截图+AI 识别中文露出。Gap: 文案回刷工具未支持俄语。Next: 俄语版本 DDL 3 月底。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 五、维持词库覆盖 -->
+        <section class="reveal-section">
+            <div class="mb-8">
+                <h2 class="text-4xl font-bold text-gray-900 mb-2">五、维持词库覆盖</h2>
+                <p class="text-gray-400 uppercase tracking-wider text-sm">Glossary Coverage</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="card p-8 rounded-2xl bg-gradient-to-br from-white to-aurora-light border border-aurora-mid">
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">产品界面词库</h3>
+                    <p class="text-5xl font-bold text-aurora mb-2">92.1%</p>
+                    <p class="text-sm text-gray-500 mb-2">57,260 / 62,199（截至 01.31）</p>
+                    <p class="text-xs text-gray-600">APP 82.7%、出价 95.7%、服务端 93.8%、商品管理 90.3%、通用 94.5%、鉴别 99.3%。</p>
+                </div>
+                <div class="card p-8 rounded-2xl bg-white">
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">商品内容词条</h3>
+                    <p class="text-5xl font-bold text-aurora mb-2">93.6%</p>
+                    <p class="text-sm text-gray-500 mb-2">俄语覆盖率（截至 01.31）。韩语 81.7%。</p>
+                    <p class="text-xs text-gray-600">英 +10137、俄 +1216、韩 +8784。成分含量词条工作流、商品属性透出（鞋服类 8 项 2 月底，非鞋服 82 项 3 月底）。Next: 英/俄/韩 词条维持与爬坡至 90%，DDL 3 月底。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 附录 -->
+        <section class="reveal-section rounded-2xl bg-gradient-to-b from-aurora-light to-white border border-aurora-mid p-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">附录</h2>
+            <p class="text-sm text-gray-600">产品词库：POIZON Global Multilingual Glossary。商品词库：admin.poizon.com/translate-manage/entry。多语言问题池、BUG 记录、TQA、过往月报见原文档。</p>
+        </section>
+    </main>
+
+    <script>
+        (function() {
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { rootMargin: '-60px 0px', threshold: 0 });
+            document.querySelectorAll('.reveal-section').forEach(function(el, i) {
+                el.style.transitionDelay = (Math.min(i * 0.05, 0.3)) + 's';
+                observer.observe(el);
+            });
+        })();
+    </script>
+</body>
+</html>
