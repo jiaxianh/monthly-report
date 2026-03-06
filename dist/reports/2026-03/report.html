@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2026.03 多语言月报（周会版）</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/framer-motion@11/dist/framer-motion.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            aurora: {
+              DEFAULT: "#0066FF",
+              light: "rgba(0,102,255,0.08)",
+              mid: "rgba(0,102,255,0.2)",
+              strong: "rgba(0,102,255,0.6)"
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background: #fff; }
+    .reveal { opacity: 0; transform: translateY(24px); transition: all .55s ease; }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body class="bg-white text-gray-900 antialiased">
+  <main class="max-w-7xl mx-auto px-6 py-12 md:py-16 space-y-14">
+    <header class="reveal">
+      <p class="text-xs uppercase tracking-[0.25em] text-gray-500">Weekly To Monthly Digest</p>
+      <h1 class="text-5xl md:text-7xl font-bold tracking-tight mt-3">2026.03 多语言月报</h1>
+      <p class="text-sm text-gray-500 mt-2">Based on weekly meeting 2026-03-06</p>
+    </header>
+
+    <section class="reveal">
+      <h2 class="text-2xl md:text-3xl font-bold mb-5">核心亮点</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <article class="rounded-2xl border border-gray-200 p-5 bg-white">
+          <i class="fa-solid fa-image text-aurora text-2xl"></i>
+          <h3 class="font-bold text-lg mt-3">图片</h3>
+          <p class="text-sm text-gray-600 mt-2">Dify + Nano Banana Pro 链路跑通，单张成本约 0.6 元降至 0.06 元，587 后台新链路推进中。</p>
+        </article>
+        <article class="rounded-2xl border border-gray-200 p-5 bg-white">
+          <i class="fa-solid fa-magnifying-glass text-aurora text-2xl"></i>
+          <h3 class="font-bold text-lg mt-3">搜索</h3>
+          <p class="text-sm text-gray-600 mt-2">语种识别 99.99%，俄/韩头部词译准率 99.94% / 99.6%，召回与相关性持续优化。</p>
+        </article>
+        <article class="rounded-2xl border border-gray-200 p-5 bg-white">
+          <i class="fa-solid fa-video text-aurora text-2xl"></i>
+          <h3 class="font-bold text-lg mt-3">视频</h3>
+          <p class="text-sm text-gray-600 mt-2">视频打标准确率由 66% 提升至 95%+，首批 6k 刷数完成，翻译能力继续引入三方方案。</p>
+        </article>
+        <article class="rounded-2xl border border-gray-200 p-5 bg-white">
+          <i class="fa-solid fa-diagram-project text-aurora text-2xl"></i>
+          <h3 class="font-bold text-lg mt-3">AI 三方字段映射</h3>
+          <p class="text-sm text-gray-600 mt-2">得物与三方平台类目/品牌/属性映射工作流已落地，支持后续规模化映射与质量迭代。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="reveal grid grid-cols-1 lg:grid-cols-12 gap-4">
+      <article class="lg:col-span-8 rounded-2xl border border-gray-200 p-6 bg-gradient-to-b from-aurora-light to-white">
+        <p class="text-xs uppercase tracking-wider text-gray-500">一、商品</p>
+        <h2 class="text-2xl font-bold mt-2">提升用户价值 · 商品</h2>
+        <p class="text-sm text-gray-700 mt-4">目标：提升商详提单率 1%，持续优化 AIGC 长图文、商品信息质量、图片与视频翻译链路。</p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-5">
+          <div class="rounded-xl border border-aurora-mid p-3"><div class="text-3xl font-bold text-aurora">81.7%</div><div class="text-xs text-gray-500">韩语词条覆盖</div></div>
+          <div class="rounded-xl border border-aurora-mid p-3"><div class="text-3xl font-bold text-aurora">90%</div><div class="text-xs text-gray-500">英/俄翻译准确率</div></div>
+          <div class="rounded-xl border border-aurora-mid p-3"><div class="text-3xl font-bold text-aurora">68~72%</div><div class="text-xs text-gray-500">图片翻译准确率</div></div>
+          <div class="rounded-xl border border-aurora-mid p-3"><div class="text-3xl font-bold text-aurora">95%+</div><div class="text-xs text-gray-500">视频打标准确率</div></div>
+        </div>
+      </article>
+      <aside class="lg:col-span-4 rounded-2xl border border-gray-200 p-6">
+        <h3 class="font-bold">Gap 与下一步</h3>
+        <ul class="mt-3 space-y-2 text-sm text-gray-600">
+          <li>韩语覆盖率仍未达 90%。</li>
+          <li>图片翻译准确率需继续提升。</li>
+          <li>视频翻译端到端链路待补齐。</li>
+          <li>推进 587 图片新链路、三方视频能力接入。</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="reveal grid grid-cols-1 lg:grid-cols-2 gap-4">
+      <article class="rounded-2xl border border-gray-200 p-6">
+        <p class="text-xs uppercase tracking-wider text-gray-500">二、搜索</p>
+        <h2 class="text-2xl font-bold mt-2">提升 UV 价值</h2>
+        <p class="text-sm text-gray-700 mt-3">语种识别 99.99%，俄/韩整体准确率 93.6% / 86.6%，离线与实时模型持续优化，中文搜索词增量翻译机制已跑通。</p>
+        <p class="text-sm text-gray-600 mt-3"><strong>Gap：</strong>中尾 query 拼写与品牌音译问题仍有波动；中文评测口径差异导致结果抖动。</p>
+        <p class="text-sm text-gray-600 mt-2"><strong>Next：</strong>3-4 月完成模型与评测优化，5 月启动搜索 AB 实验。</p>
+      </article>
+      <article class="rounded-2xl border border-gray-200 p-6">
+        <p class="text-xs uppercase tracking-wider text-gray-500">三、评价</p>
+        <h2 class="text-2xl font-bold mt-2">评论翻译质量提升</h2>
+        <p class="text-sm text-gray-700 mt-3">AI 评论评测工作流进入调试，目标精确率 &gt;0.95、准确率 &gt;0.7，并基于新标注数据持续迭代过滤与翻译规则。</p>
+        <p class="text-sm text-gray-600 mt-3"><strong>Gap：</strong>价格/尺码等结构化信息场景仍存在误差。</p>
+        <p class="text-sm text-gray-600 mt-2"><strong>Next：</strong>扩大评测覆盖并与提单率 AB 数据联动分析。</p>
+      </article>
+    </section>
+
+    <section class="reveal">
+      <div class="mb-4">
+        <p class="text-xs uppercase tracking-wider text-gray-500">四、买卖家与内部员工满意度</p>
+        <h2 class="text-2xl font-bold mt-2">语言满意度专项</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <article class="rounded-2xl border border-gray-200 p-5 bg-white">
+          <i class="fa-solid fa-user-check text-aurora text-xl"></i>
+          <h3 class="font-bold mt-3">海外用户满意度</h3>
+          <p class="text-sm text-gray-600 mt-2">鉴别多语言 2 期新增印尼语、越南语、蒙古语、印地语、菲律宾语，并补齐日期/时间/数字/排序本地化展示。</p>
+        </article>
+        <article class="rounded-2xl border border-gray-200 p-5 bg-white">
+          <i class="fa-solid fa-store text-aurora text-xl"></i>
+          <h3 class="font-bold mt-3">海外卖家满意度</h3>
+          <p class="text-sm text-gray-600 mt-2">推进日语搜索与商品日语化、PINKO 多语言 2 期质检项翻译、客服 AI 翻译接入，持续提升卖家侧体验。</p>
+        </article>
+        <article class="rounded-2xl border border-gray-200 p-5 bg-white">
+          <i class="fa-solid fa-users-gear text-aurora text-xl"></i>
+          <h3 class="font-bold mt-3">海外内部员工满意度</h3>
+          <p class="text-sm text-gray-600 mt-2">Global 与智能运营重点页面英语走查持续推进，聚焦硬编码与机翻问题，按优先级集中修复。</p>
+        </article>
+      </div>
+      <div class="rounded-2xl border border-aurora-mid p-4 mt-4 bg-aurora-light">
+        <p class="text-sm text-gray-700"><strong>Gap：</strong>XBB 本地化体验仍有提升空间，卖家侧中文满意度历史偏低，部分页面硬编码影响内部体验。</p>
+        <p class="text-sm text-gray-700 mt-1"><strong>Next：</strong>引入 native 走查、落地日语搜索能力与月度评测、完成 PINKO 与客服 AI 接入、联合海外 AM 明确修复优先级。</p>
+      </div>
+    </section>
+
+    <section class="reveal rounded-2xl border border-gray-200 p-6 bg-gradient-to-b from-aurora-light to-white">
+      <p class="text-xs uppercase tracking-wider text-gray-500">五、效率与质量支撑</p>
+      <h2 class="text-2xl font-bold mt-2">LQA 自动化与 AI 巡检</h2>
+      <p class="text-sm text-gray-700 mt-3">RPA 自动截图 + AI 中文露出识别已在生产回扫中落地；语料清洗、记忆库与巡检评测集持续建设，推动流程从“可跑”走向“可闭环”。</p>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.06 });
+      document.querySelectorAll(".reveal").forEach(function (el, i) {
+        el.style.transitionDelay = (Math.min(i * 0.06, 0.25)) + "s";
+        observer.observe(el);
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -2,25 +2,34 @@
 
 ## 本机访问
 
-在项目根目录执行：
+```bash
+cd dist
+python3 -m http.server 3000
+```
+
+- 索引页：**http://localhost:3000/**
+- 2026.1 月报：http://localhost:3000/reports/2026-01/report.html
+- 2025.11 月报：http://localhost:3000/reports/2025-11/report.html
+
+---
+
+## 别人可访问的 URL（局域网）
+
+**前提**：在本机先执行（绑定到所有网卡后，同一 WiFi/局域网内的设备才能访问）：
 
 ```bash
 cd dist
-python3 -m http.server 8080
+python3 -m http.server 3000 --bind 0.0.0.0
 ```
 
-浏览器打开：**http://localhost:8080**
+**可分享给同事/他人的链接**（把下面的地址发给对方，对方浏览器打开即可）：
 
-- 索引页：http://localhost:8080/
-- 2025.11 多语言月报：http://localhost:8080/reports/2025-11/report.html
+| 页面 | URL |
+|------|-----|
+| 月报索引（首页） | **http://10.157.74.179:3000/** |
+| 2026.1 多语言月报 | http://10.157.74.179:3000/reports/2026-01/report.html |
+| 2025.11 多语言月报 | http://10.157.74.179:3000/reports/2025-11/report.html |
 
-## 局域网访问
+若 10.157.74.179 无法访问，可尝试：**http://10.167.36.106:3000/**
 
-若需同一局域网内其他设备访问，请绑定到所有网卡：
-
-```bash
-cd dist
-python3 -m http.server 8080 --bind 0.0.0.0
-```
-
-然后在浏览器使用：**http://\<本机IP\>:8080**（将 \<本机IP\> 替换为当前电脑在局域网中的 IP，如 192.168.1.100）。
+> 说明：上述 IP 为本机当前局域网地址，若电脑重连 WiFi 或换网络，IP 可能变化，需重新查本机 IP 并更新上述链接。
