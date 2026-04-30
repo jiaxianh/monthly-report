@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2026.4 多语言月报</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            aurora: {
+              DEFAULT: "#0066FF",
+              light: "rgba(0, 102, 255, 0.08)",
+              mid: "rgba(0, 102, 255, 0.35)",
+              strong: "rgba(0, 102, 255, 0.6)"
+            }
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    body { background: #fff; }
+    .gradient-aurora { background: linear-gradient(180deg, rgba(0,102,255,0.07) 0%, rgba(0,102,255,0.02) 100%); }
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .bleu-plus { color: #16a34a; }
+    .bleu-minus { color: #dc2626; }
+    .tag-done { background: #dcfce7; color: #15803d; }
+    .tag-wip  { background: #dbeafe; color: #1d4ed8; }
+    .tag-todo { background: #f3f4f6; color: #6b7280; }
+    .tag-delay{ background: #fef9c3; color: #a16207; }
+    .metric-bar-bg { background: #e5e7eb; border-radius: 9999px; height: 6px; }
+    .metric-bar-fill { background: #0066FF; border-radius: 9999px; height: 6px; }
+  </style>
+</head>
+<body class="min-h-screen bg-white text-gray-900 antialiased">
+  <main class="max-w-7xl mx-auto px-6 py-12 md:py-16 space-y-14">
+
+    <!-- ── HERO ── -->
+    <header id="hero" class="reveal">
+      <a href="../../index.html" class="text-xs uppercase tracking-widest text-gray-400 hover:text-aurora transition-colors">← 返回索引</a>
+      <p class="text-xs uppercase tracking-[0.28em] text-gray-500 mt-4">Monthly Report · April 2026</p>
+      <h1 class="text-5xl md:text-7xl font-bold tracking-tight mt-3">2026.4 多语言月报</h1>
+      <p class="text-sm text-gray-500 mt-3">Multilingual Team Update</p>
+    </header>
+
+    <!-- ── HIGHLIGHTS ── -->
+    <section id="highlights" class="reveal">
+      <h2 class="text-3xl font-bold">核心亮点</h2>
+      <p class="text-xs uppercase tracking-widest text-gray-500 mt-1">Highlights</p>
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+        <article class="rounded-2xl border border-gray-200 p-5">
+          <i class="fa-solid fa-store text-aurora text-2xl"></i>
+          <h3 class="font-bold text-lg mt-3">卖家语言满意度</h3>
+          <p class="text-sm text-gray-600 mt-2">Q1 卖家问卷已知多语言问题全量修复（日/韩各 3/3），预计提升满意度 3.9%；补提文案流程自动化上线 v5.91，key 自动追加提需文档并触发多语言确认。</p>
+        </article>
+
+        <article class="rounded-2xl border border-gray-200 p-5">
+          <i class="fa-solid fa-magnifying-glass text-aurora text-2xl"></i>
+          <h3 class="font-bold text-lg mt-3">搜索多语言</h3>
+          <p class="text-sm text-gray-600 mt-2">快筛 tag 翻译准确率由 89.6% 提升至 93.1%（接入 RAG）；俄韩搜索翻译 4 月评测达标；中文搜索词评测 87%，5 月初启动 AB 实验。</p>
+        </article>
+
+        <article class="rounded-2xl border border-gray-200 p-5">
+          <i class="fa-solid fa-comments text-aurora text-2xl"></i>
+          <h3 class="font-bold text-lg mt-3">评论翻译</h3>
+          <p class="text-sm text-gray-600 mt-2">俄韩评论翻译 Prompt 优化完成，三路方案（doubao / GPT-4.1 / deepseek / 端到端自研模型）并行评测推进中。</p>
+        </article>
+
+        <article class="rounded-2xl border border-gray-200 p-5">
+          <i class="fa-solid fa-photo-film text-aurora text-2xl"></i>
+          <h3 class="font-bold text-lg mt-3">商品多模态翻译</h3>
+          <p class="text-sm text-gray-600 mt-2">完成阿里图像翻译验收评测（XBB 接入术语表：准确性 4+，版面 4+）；视频翻译评测视觉尚可（均分 3.42）、翻译欠佳（均分 3.05），暂 Delay。</p>
+        </article>
+
+        <article class="rounded-2xl border border-gray-200 p-5">
+          <i class="fa-solid fa-robot text-aurora text-2xl"></i>
+          <h3 class="font-bold text-lg mt-3">AI 提效</h3>
+          <p class="text-sm text-gray-600 mt-2">AI 提效流程宣讲完毕；B2B 货单发货工具（微信/飞书群发 + 标品采集）三项完成；智能客服 Demo 及场景评测完成；Crowdin 精调英文 BLEU +13.66、法文 +7.55、韩文 +7.38。</p>
+        </article>
+
+        <article class="rounded-2xl border border-gray-200 p-5">
+          <i class="fa-solid fa-shield-halved text-aurora text-2xl"></i>
+          <h3 class="font-bold text-lg mt-3">鉴别多语言走查</h3>
+          <p class="text-sm text-gray-600 mt-2">完成 Q2 目标摸底走查，当前页面平均 bug 数：俄语 1.445、韩语 1.62、英语 0.95、印尼语 2.02；P0 bug 本周完成修复。</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ── SEC 1: 商品多语言 ── -->
+    <section id="sec1" class="reveal grid grid-cols-1 lg:grid-cols-12 gap-4">
+      <article class="lg:col-span-8 rounded-2xl border-2 border-gray-200 p-6 gradient-aurora">
+        <p class="text-xs uppercase tracking-widest text-gray-500">一、提升用户价值 - 商品多语言</p>
+        <h2 class="text-2xl font-bold mt-2">商品内容 · 图像 · 视频翻译</h2>
+
+        <div class="mt-5 space-y-4 text-sm text-gray-700">
+          <div>
+            <p class="font-semibold text-gray-900">核心指标</p>
+            <p class="mt-1">目标：优化多语言商详内容，提升商详提单率 1%。鞋类标题优化策略制定并推进标题生产；视频翻译评测：视觉均分 3.42，翻译均分 3.05，约 67% 样本集中在 2–3 分中低分区间。</p>
+          </div>
+          <div>
+            <p class="font-semibold text-gray-900">过程</p>
+            <ul class="mt-1 space-y-1 list-disc list-inside">
+              <li><strong>鞋类标题优化：</strong>制定优化策略，标题生产与信息增删分析推进，预计提需 593，AB 实验验证。</li>
+              <li><strong>图像翻译：</strong>接入阿里图像翻译，随机抽检 50 张；韩语接入术语表后版面美观度提升但准确性有所下降，待调参优化。</li>
+              <li><strong>视频翻译：</strong>获得高质量评价（4–5 分）样本仅占 28.4%；视觉质量 3/4 分合计占比 61.3%；结论：翻译不满足上线要求，Delay。</li>
+              <li><strong>词条覆盖：</strong>自动词条提取工具 4 月采纳率 43%（0409）/ 38%（0417）；POIZON Global Multilingual Glossary Q2 新增 Tab，v591 新增 5 条。</li>
+            </ul>
+          </div>
+          <div>
+            <p class="font-semibold text-gray-900">Gap</p>
+            <ul class="mt-1 space-y-1 list-disc list-inside">
+              <li>图像翻译准确性与版面美观度存在取舍，需进一步调优。</li>
+              <li>视频翻译质量未达上线标准，端到端能力有较大提升空间。</li>
+              <li>鞋类标题 AB 实验尚未启动，提单率提升效果待验证。</li>
+            </ul>
+          </div>
+          <div>
+            <p class="font-semibold text-gray-900">下月计划</p>
+            <ul class="mt-1 space-y-1 list-disc list-inside">
+              <li>完成鞋类标题优化生产上线，启动 AB 实验。</li>
+              <li>推进图像翻译术语表调参，平衡准确性与美观度。</li>
+              <li>调研视频翻译优化路径（含配音和字幕 AI 翻译能力梳理）。</li>
+              <li>推进词库自动同步飞书词典（Anycross 对接）。</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <aside class="lg:col-span-4 rounded-2xl border-2 border-gray-200 p-6 flex flex-col gap-3">
+        <p class="text-xs uppercase tracking-widest text-gray-500">Key Numbers</p>
+        <div class="border border-aurora-mid rounded-xl p-3">
+          <div class="text-3xl font-bold text-aurora">38–43%</div>
+          <div class="text-xs text-gray-500 mt-1">词条自动提取采纳率（4月）</div>
+        </div>
+        <div class="border border-aurora-mid rounded-xl p-3">
+          <div class="text-3xl font-bold text-aurora">3.42</div>
+          <div class="text-xs text-gray-500 mt-1">视频翻译视觉质量均分（/5）</div>
+        </div>
+        <div class="border border-aurora-mid rounded-xl p-3">
+          <div class="text-3xl font-bold text-aurora">3.05</div>
+          <div class="text-xs text-gray-500 mt-1">视频翻译语言质量均分（/5）<span class="tag-delay text-xs px-1.5 py-0.5 rounded-full ml-1">Delay</span></div>
+        </div>
+        <div class="border border-aurora-mid rounded-xl p-3">
+          <div class="text-3xl font-bold text-aurora">28.4%</div>
+          <div class="text-xs text-gray-500 mt-1">视频翻译高质量（4–5分）样本占比</div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ── SEC 2: 搜索多语言 ── -->
+    <section id="sec2" class="reveal grid grid-cols-1 lg:grid-cols-12 gap-4">
+      <aside class="lg:col-span-4 rounded-2xl border-2 border-gray-200 p-6 flex flex-col gap-3 order-last lg:order-first">
+        <p class="text-xs uppercase tracking-widest text-gray-500">Key Numbers</p>
+        <div class="border border-aurora-mid rounded-xl p-3">
+          <div class="flex items-end gap-1">
+            <span class="text-3xl font-bold text-aurora">93.1%</span>
+            <span class="text-sm text-green-600 mb-1">↑ +3.5pp</span>
+          </div>
+          <div class="text-xs text-gray-500 mt-1">快筛 tag 翻译准确率（RAG 优化后）</div>
+        </div>
+        <div class="border border-aurora-mid rounded-xl p-3">
+          <div class="text-3xl font-bold text-aurora">87%</div>
+          <div class="text-xs text-gray-500 mt-1">中文搜索词翻译准确率（2 月评测）<br>Q2 目标 90%</div>
+        </div>
+        <div class="border border-aurora-mid rounded-xl p-3">
+          <div class="text-3xl font-bold text-aurora">87.3%</div>
+          <div class="text-xs text-gray-500 mt-1">下拉词库中译英准确率</div>
+        </div>
+        <div class="border border-aurora-mid rounded-xl p-3">
+          <div class="text-3xl font-bold text-aurora">65.8%</div>
+          <div class="text-xs text-gray-500 mt-1">下拉词库中译俄准确率（品牌/系列多译为主要问题）</div>
+        </div>
+        <div class="border border-aurora-mid rounded-xl p-3">
+          <div class="flex items-center gap-2">
+            <span class="text-lg font-bold text-aurora">俄韩搜索翻译</span>
+            <span class="tag-done text-xs px-2 py-0.5 rounded-full">4月评测达标</span>
+          </div>
+        </div>
+      </aside>
+
+      <article class="lg:col-span-8 rounded-2xl border-2 border-gray-200 p-6">
+        <p class="text-xs uppercase tracking-widest text-gray-500">二、提升用户价值 - 搜索多语言</p>
+        <h2 class="text-2xl font-bold mt-2">搜索翻译 · tag · 下拉词库</h2>
+
+        <div class="mt-5 space-y-4 text-sm text-gray-700">
+          <div>
+            <p class="font-semibold text-gray-900">核心指标</p>
+            <p class="mt-1">目标：优化多语言搜索，提升点击率 1%。</p>
+          </div>
+          <div>
+            <p class="font-semibold text-gray-900">过程</p>
+            <ul class="mt-1 space-y-1 list-disc list-inside">
+              <li><strong>俄韩搜索翻译：</strong>4 月评测达标；自研模型（Gemma 4）与线上 GPT-4o 替换测试推进中。</li>
+              <li><strong>快筛 tag：</strong>基于 gemini-3.1-pro-preview + RAG 召回改写，准确率从 89.6% 提升至 93.1%；俄语不算语法问题 96.6%，算语法问题 85.8%；下周刷数并开启 AB 实验。</li>
+              <li><strong>中文搜索词：</strong>590–591 机翻算法迭代，2 月评测 87%，Q2 目标 90%；主要错误为一词多义，5 月初启动 AB 实验。</li>
+              <li><strong>搜索下拉词库：</strong>中译英 87.3%（4 月底完成）；中译俄 65.8%，品牌/系列多译俄语占 10%，优化重在语料积累。</li>
+              <li><strong>搜索商卡 tag：</strong>人工翻译进行中，4 月底完成，后续推进 AB 实验。</li>
+            </ul>
+          </div>
+          <div>
+            <p class="font-semibold text-gray-900">Gap</p>
+            <ul class="mt-1 space-y-1 list-disc list-inside">
+              <li>中译俄下拉词库准确率（65.8%）与目标差距较大，优化周期较长。</li>
+              <li>搜索词 tag 翻译 AB 实验尚未启动，点击率提升效果未验证。</li>
+              <li>自研模型替换的成本与效果平衡仍需持续调试。</li>
+            </ul>
+          </div>
+          <div>
+            <p class="font-semibold text-gray-900">下月计划</p>
+            <ul class="mt-1 space-y-1 list-disc list-inside">
+              <li>快筛 tag 刷数并启动 AB 实验，监测点击率。</li>
+              <li>启动中文搜索词翻译 AB 实验（5 月初）。</li>
+              <li>完成搜索商卡 tag 人工翻译，启动 AB 实验准备。</li>
+              <li>持续推进自研模型评测与线上替换（Gemma 4）。</li>
+              <li>推进下拉词库俄语语料积累与质量优化。</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ── SEC 3: 评价 ── -->
+    <section id="sec3" class="reveal rounded-2xl border-2 border-gray-200 p-6">
+      <p class="text-xs uppercase tracking-widest text-gray-500">三、提升用户价值 - 评价</p>
+      <h2 class="text-2xl font-bold mt-2">评论翻译 · AI 总结 · 标签打标</h2>
+
+      <div class="mt-5 grid grid-cols-1 md:grid-cols-3 gap-5 text-sm text-gray-700">
+        <div class="md:col-span-2 space-y-4">
+          <div>
+            <p class="font-semibold text-gray-900">核心指标</p>
+            <p class="mt-1">目标：优化多语言用户评价，提升商详提单率 1%。俄韩评论翻译 Prompt 优化完成，多路方案评测进行中；AI 评论标签打标 AB 实验效果监测中。</p>
+          </div>
+          <div>
+            <p class="font-semibold text-gray-900">过程</p>
+            <ul class="mt-1 space-y-1 list-disc list-inside">
+              <li><strong>俄韩评论翻译优化：</strong>Prompt 优化完成，下周一测；三路方案并行：① doubao-seed-2-0-pro / GPT-4.1 切换评测；② deepseek v3 原文处理 + 三方翻译；③ 端到端（中-俄）自研模型信息过滤+翻译。</li>
+              <li><strong>AI 评论总结优化：</strong>持续监测 AB 实验效果，俄/韩评论翻译优化进行中。</li>
+              <li><strong>评论标签打标监测：</strong>AB 实验效果监测进行中。</li>
+            </ul>
+          </div>
+          <div>
+            <p class="font-semibold text-gray-900">Gap</p>
+            <ul class="mt-1 space-y-1 list-disc list-inside">
+              <li>多路方案尚在评测，最优路径未确定，实验上线时间有不确定性。</li>
+              <li>评测结果与商详提单率 AB 数据的联动关系尚待验证。</li>
+            </ul>
+          </div>
+          <div>
+            <p class="font-semibold text-gray-900">下月计划</p>
+            <ul class="mt-1 space-y-1 list-disc list-inside">
+              <li>完成多路方案评测，确定优化策略并推进上线。</li>
+              <li>持续监测标签打标 AB 实验效果，输出可执行优化策略。</li>
+              <li>将评论质量提升与商详提单率数据联动分析。</li>
+            </ul>
+          </div>
+        </div>
+        <div class="space-y-3">
+          <p class="text-xs uppercase tracking-widest text-gray-500">评测方案对比</p>
+          <div class="rounded-xl border border-gray-200 p-3 space-y-2 text-xs">
+            <div class="flex items-center gap-2">
+              <span class="w-5 h-5 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-xs flex-shrink-0">①</span>
+              <span>doubao-seed-2-0-pro / GPT-4.1 切换评测</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="w-5 h-5 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-xs flex-shrink-0">②</span>
+              <span>deepseek v3 原文处理 + 三方翻译</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="w-5 h-5 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-xs flex-shrink-0">③</span>
+              <span>端到端自研模型（中-俄）信息过滤+翻译</span>
+            </div>
+          </div>
+          <div class="rounded-xl border border-gray-200 p-3 text-xs space-y-2">
+            <p class="font-semibold text-gray-700">进行中</p>
+            <div class="flex flex-wrap gap-1">
+              <span class="tag-wip px-2 py-0.5 rounded-full">俄语评论翻译优化</span>
+              <span class="tag-wip px-2 py-0.5 rounded-full">韩语评论翻译优化</span>
+              <span class="tag-wip px-2 py-0.5 rounded-full">AI 评论总结 AB监测</span>
+              <span class="tag-wip px-2 py-0.5 rounded-full">标签打标 AB监测</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SEC 4: 买卖家与内部员工语言满意度 ── -->
+    <section id="sec4" class="reveal space-y-4">
+      <div class="rounded-2xl border-2 border-gray-200 p-6 gradient-aurora">
+        <p class="text-xs uppercase tracking-widest text-gray-500">四、买卖家与内部员工语言满意度</p>
+        <h2 class="text-2xl font-bold mt-2">O1 目标：提升多语言满意度（60% OKR 权重）</h2>
+
+        <!-- OKR Metrics Grid -->
+        <div class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-3">
+          <div class="rounded-xl bg-white border border-gray-200 p-3">
+            <div class="text-xs text-gray-500">英语卖家满意度</div>
+            <div class="text-2xl font-bold text-aurora mt-1">74%</div>
+            <div class="metric-bar-bg mt-2"><div class="metric-bar-fill" style="width:74%"></div></div>
+            <div class="text-xs text-gray-400 mt-1">KR 5.0% · Q2 QTD</div>
+          </div>
+          <div class="rounded-xl bg-white border border-gray-200 p-3">
+            <div class="text-xs text-gray-500">日语卖家满意度</div>
+            <div class="text-2xl font-bold text-aurora mt-1">61%</div>
+            <div class="metric-bar-bg mt-2"><div class="metric-bar-fill" style="width:61%"></div></div>
+            <div class="text-xs text-gray-400 mt-1">KR 12.5% · Q2 QTD</div>
+          </div>
+          <div class="rounded-xl bg-white border border-gray-200 p-3">
+            <div class="text-xs text-gray-500">韩语卖家满意度</div>
+            <div class="text-2xl font-bold text-aurora mt-1">69%</div>
+            <div class="metric-bar-bg mt-2"><div class="metric-bar-fill" style="width:69%"></div></div>
+            <div class="text-xs text-gray-400 mt-1">KR 12.5% · Q2 QTD</div>
+          </div>
+          <div class="rounded-xl bg-white border border-gray-200 p-3">
+            <div class="text-xs text-gray-500">XBB 用户满意度</div>
+            <div class="text-2xl font-bold text-aurora mt-1">85%</div>
+            <div class="metric-bar-bg mt-2"><div class="metric-bar-fill" style="width:85%"></div></div>
+            <div class="text-xs text-gray-400 mt-1">KR 12.5% · Q2 QTD</div>
+          </div>
+          <div class="rounded-xl bg-white border border-gray-200 p-3">
+            <div class="text-xs text-gray-500">KR 用户满意度</div>
+            <div class="text-2xl font-bold text-aurora mt-1">77%</div>
+            <div class="metric-bar-bg mt-2"><div class="metric-bar-fill" style="width:77%"></div></div>
+            <div class="text-xs text-gray-400 mt-1">KR 5.0% · Q2 QTD</div>
+          </div>
+          <div class="rounded-xl bg-white border border-gray-200 p-3">
+            <div class="text-xs text-gray-500">鉴定用户满意度 P0</div>
+            <div class="text-2xl font-bold text-aurora mt-1">82.75%</div>
+            <div class="metric-bar-bg mt-2"><div class="metric-bar-fill" style="width:82.75%"></div></div>
+            <div class="text-xs text-gray-400 mt-1">KR 12.5% · Q2 QTD</div>
+          </div>
+          <div class="rounded-xl bg-white border border-gray-200 p-3 md:col-span-2">
+            <div class="text-xs text-gray-500">内部系统语言满意度</div>
+            <div class="text-2xl font-bold text-aurora mt-1">100%</div>
+            <div class="metric-bar-bg mt-2"><div class="metric-bar-fill" style="width:100%"></div></div>
+            <div class="text-xs text-gray-400 mt-1">监控中 · Q2 QTD</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 卖家侧 -->
+      <div class="rounded-2xl border-2 border-gray-200 p-6">
+        <h3 class="text-lg font-bold">卖家侧</h3>
+        <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-gray-700">
+
+          <div class="space-y-2">
+            <p class="font-semibold text-gray-900 flex items-center gap-2">
+              <i class="fa-solid fa-j text-aurora text-xs"></i> 日语卖家语言满意度
+            </p>
+            <ul class="space-y-1 list-disc list-inside text-xs">
+              <li>Q1 问卷已知问题修复 100%（3/3）<span class="tag-done text-xs px-1.5 py-0.5 rounded-full ml-1">完成</span></li>
+              <li>词条一致性检查推进：一对多（进行中）→ 多对一 → 术语一致性；DDL 词库 QA + 一对多 5/15，多对一 + 术语 6/26</li>
+              <li>重点页面排查范围确定，1/3 模块已确认，准备走查</li>
+              <li>支持商家后台出价搜索二级页面日语展示 <span class="tag-done text-xs px-1.5 py-0.5 rounded-full ml-1">完成</span></li>
+              <li>非目标语露出排查 P0P1 问题优化进行中</li>
+              <li>出价到动销卖家体验链路优化调研中</li>
+            </ul>
+          </div>
+
+          <div class="space-y-2">
+            <p class="font-semibold text-gray-900 flex items-center gap-2">
+              <i class="fa-solid fa-k text-aurora text-xs"></i> 韩语卖家语言满意度
+            </p>
+            <ul class="space-y-1 list-disc list-inside text-xs">
+              <li>Q1 问卷已知问题修复 100%（3/3）<span class="tag-done text-xs px-1.5 py-0.5 rounded-full ml-1">完成</span></li>
+              <li>卖家 APP / PC 走查完成：卖家中心主页、数据中心、订单管理、退货管理、寄售管理 <span class="tag-done text-xs px-1.5 py-0.5 rounded-full ml-1">完成</span></li>
+              <li>出价链路重点场景文案排查（1/3 模块确认，准备走查）</li>
+              <li>注册后表单拉起及入驻页体验链路优化调研（未开始，5 月）</li>
+            </ul>
+          </div>
+
+          <div class="space-y-2">
+            <p class="font-semibold text-gray-900 flex items-center gap-2">
+              <i class="fa-solid fa-f text-aurora text-xs"></i> 法语卖家语言满意度
+            </p>
+            <ul class="space-y-1 list-disc list-inside text-xs">
+              <li>重点页面走查进行中（发货管理、订单管理、出价调价、盘货、自主出价），走查进度 0/5</li>
+              <li>French language issues bugfix 文档建立</li>
+            </ul>
+            <div class="mt-3 pt-3 border-t border-gray-100">
+              <p class="font-semibold text-gray-900 text-xs">流程建设</p>
+              <ul class="mt-1 space-y-1 list-disc list-inside text-xs">
+                <li>补提文案流程自动化 v5.91 上线，key 自动追加提需文档 <span class="tag-done text-xs px-1.5 py-0.5 rounded-full ml-1">完成</span></li>
+                <li>需求验收流程优化，skill 每日自动扫描 30 日内已验收需求 <span class="tag-done text-xs px-1.5 py-0.5 rounded-full ml-1">完成</span></li>
+                <li>满意度问卷调优（搭车五一前发放，预计提升满意度 1.7%，待开始）</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 买家侧 -->
+      <div class="rounded-2xl border-2 border-gray-200 p-6">
+        <h3 class="text-lg font-bold">买家侧</h3>
+        <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-gray-700">
+
+          <div class="space-y-2">
+            <p class="font-semibold text-gray-900">XBB 用户语言满意度（AI 巡检）</p>
+            <ul class="space-y-1 list-disc list-inside text-xs">
+              <li>标题巡检工作流搭建完成，修复 off-white 品牌多译 badcase</li>
+              <li>属性/尺码巡检 prompt 调优，全面巡检工作流已调整，下周出结果</li>
+              <li>三方平台品牌翻译巡检工具 <span class="tag-done text-xs px-1.5 py-0.5 rounded-full ml-1">完成</span></li>
+              <li>AI 巡检看板完善中（三方平台开店、标题、属性、尺码）</li>
+              <li>XBB 三级类目词条 native review 进行中</li>
+              <li>XBB 海外重点页面走查：前买/账户设置/商详 <span class="tag-done text-xs px-1.5 py-0.5 rounded-full ml-1">已完成</span>；提单待开始</li>
+              <li>俄语头部搜索词筛选（ozon 搜索结果对比）进行中</li>
+            </ul>
+          </div>
+
+          <div class="space-y-2">
+            <p class="font-semibold text-gray-900">鉴定用户语言满意度（P0：英韩印尼俄）</p>
+            <ul class="space-y-1 list-disc list-inside text-xs">
+              <li>Q2 摸底走查完成，页面平均 bug 数：
+                <ul class="ml-4 mt-1 space-y-0.5">
+                  <li>俄语：1.445</li>
+                  <li>韩语：1.62</li>
+                  <li>英语：0.95</li>
+                  <li>印尼语：2.02</li>
+                </ul>
+              </li>
+              <li>P0 及主页 bug 本周完成修复；P1 及以下 5/9 前完成</li>
+              <li>重点品类 × 品牌文本审校：高频术语及品牌高优文本提取完成，审校进行中</li>
+              <li>基于高曝光品牌 Few-shot 示例库 + AI 精调（未开始，5 月）</li>
+            </ul>
+          </div>
+
+          <div class="space-y-2">
+            <p class="font-semibold text-gray-900">KR 用户满意度</p>
+            <ul class="space-y-1 list-disc list-inside text-xs">
+              <li>三级类目（跑步鞋/T恤/潮流公仔）词条提取进行中（目标 90% 覆盖率）</li>
+              <li>线下用户访谈调研进行中，商品标题拼接和属性翻译规则优化推进</li>
+              <li>短剧配音 + 翻译（1000 分钟）：需求拆解为消除中文字幕 + 俄语字幕翻译 + 俄语配音；供应商方案 5/6 提供，预计交付 DDL 5/20</li>
+            </ul>
+            <div class="mt-3 pt-3 border-t border-gray-100">
+              <p class="font-semibold text-gray-900 text-xs">内部员工侧</p>
+              <ul class="mt-1 space-y-1 list-disc list-inside text-xs">
+                <li>Global Admin、智能运营 P0 模块 EN 产品手册生成推进中</li>
+                <li>工具：Guidde（支持语音录制+截图+视频生成）</li>
+                <li>中文手册 + 视频 DDL：5/9；EN 手册 + 视频 DDL：5/15</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gap & 下月计划 -->
+      <div class="rounded-2xl border-2 border-gray-200 p-6 grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-gray-700">
+        <div>
+          <p class="font-semibold text-gray-900">Gap 或存在问题</p>
+          <ul class="mt-2 space-y-1 list-disc list-inside">
+            <li>日韩卖家重点页面走查刚启动，整体进度偏慢。</li>
+            <li>法语卖家页面走查尚未实质开始（0/5）。</li>
+            <li>XBB 海外买家页面全链路走查中提单环节尚未开始。</li>
+            <li>韩国卖家注册后表单拉起率下降原因尚未明确，优化仍处于调研阶段。</li>
+          </ul>
+        </div>
+        <div>
+          <p class="font-semibold text-gray-900">下月计划</p>
+          <ul class="mt-2 space-y-1 list-disc list-inside">
+            <li>完成日语卖家重点页面走查（出价链路等），输出修复清单。</li>
+            <li>满意度问卷发放 + 回收，分析归因并输出优化优先级。</li>
+            <li>推进韩语卖家注册及入驻页面体验链路优化调研。</li>
+            <li>完成法语重点页面走查。</li>
+            <li>完成 XBB 海外买家页面全链路走查（提单环节）。</li>
+            <li>完成鉴别模块 P1 及以下 bug 修复（5/9 前）。</li>
+            <li>KR 短剧配音+翻译按时交付（预计 5/20）。</li>
+            <li>词库 QA + 一对多日语词条优化（DDL 5/15）。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SEC 5: 质量与效率建设 ── -->
+    <section id="sec5" class="reveal space-y-4">
+      <div class="rounded-2xl border-2 border-gray-200 p-6">
+        <p class="text-xs uppercase tracking-widest text-gray-500">五、质量与效率建设（支撑项）</p>
+        <h2 class="text-2xl font-bold mt-2">AI-TQA · Crowdin 精调 · AI 提效工具 · LQA · 记忆库</h2>
+
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-gray-700">
+          <div class="space-y-4">
+            <div>
+              <p class="font-semibold text-gray-900">核心指标</p>
+              <ul class="mt-1 space-y-0.5 list-disc list-inside text-xs">
+                <li>流程自动化率目标：30%（RDC/Deyi 打通）</li>
+                <li>流程 AI 化率目标：40%（全语种 AI-TQA 模型调试）</li>
+                <li>人工翻译记忆库可用率目标：85%</li>
+                <li>AI 提效场景数目标：落地 6 个工具</li>
+                <li>月均人工翻译结算费用目标：降至 20,000 以内</li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-semibold text-gray-900">过程</p>
+              <ul class="mt-1 space-y-1 list-disc list-inside text-xs">
+                <li><strong>AI-TQA：</strong>英日韩俄准确率 60% 召回率 70% 阶段目标推进中，扩展至全部语种；报告自动汇总功能未开始（5 月）。</li>
+                <li><strong>AI 提效工具：</strong>业务流程宣讲完毕 <span class="tag-done px-1.5 py-0.5 rounded-full">完成</span>；B2B 货单发货工具三项完成（微信群发/飞书群发/标品采集）；智能客服 Demo + 场景评测完成，RAG 知识缺失及问答格式问题已明确解决方案。</li>
+                <li><strong>LQA 自动化：</strong>前端 key 末尾空格修复、deyi 源文案更改导致译文错误修复，均随 v5.93 基建提需（待开始，5 月）。</li>
+                <li><strong>RDC / Deyi 打通：</strong>含"多语言标签"需求自动导入 deyi，delay 延至 v.594（5 月中旬）。</li>
+                <li><strong>人工翻译记忆库：</strong>Crowdin 记忆库合并清洗（文本提取合并/文本 QA/更新）未开始，5 月中 ~ 6 月底。</li>
+                <li><strong>MTPE 询价：</strong>小语种价格已确定，基本为人工翻译 80%（蒙古语因资源少，MTPE 无法获折扣，但依然建议发 MTPE 需求）。<span class="tag-done px-1.5 py-0.5 rounded-full ml-1">完成</span></li>
+                <li><strong>需求验收流程优化：</strong>skill 每日自动扫描 30 日内已验收需求表。<span class="tag-done px-1.5 py-0.5 rounded-full ml-1">完成</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="space-y-4">
+            <!-- Crowdin BLEU 表 -->
+            <div>
+              <p class="font-semibold text-gray-900">Crowdin 模型精调 BLEU 值（4 月）</p>
+              <div class="mt-2 rounded-xl border border-gray-200 overflow-hidden text-xs">
+                <table class="w-full">
+                  <thead class="bg-gray-50">
+                    <tr>
+                      <th class="text-left px-3 py-2 text-gray-500 font-medium">语言</th>
+                      <th class="text-right px-3 py-2 text-gray-500 font-medium">微调前</th>
+                      <th class="text-right px-3 py-2 text-gray-500 font-medium">微调后</th>
+                      <th class="text-right px-3 py-2 text-gray-500 font-medium">变化</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-gray-100">
+                    <tr>
+                      <td class="px-3 py-2">英文 (en)</td>
+                      <td class="px-3 py-2 text-right">21.80</td>
+                      <td class="px-3 py-2 text-right font-medium">35.46</td>
+                      <td class="px-3 py-2 text-right bleu-plus font-bold">+13.66</td>
+                    </tr>
+                    <tr>
+                      <td class="px-3 py-2">日文 (ja)</td>
+                      <td class="px-3 py-2 text-right">54.36</td>
+                      <td class="px-3 py-2 text-right font-medium">54.18</td>
+                      <td class="px-3 py-2 text-right bleu-minus">-0.18</td>
+                    </tr>
+                    <tr>
+                      <td class="px-3 py-2">法文 (fr)</td>
+                      <td class="px-3 py-2 text-right">28.54</td>
+                      <td class="px-3 py-2 text-right font-medium">36.09</td>
+                      <td class="px-3 py-2 text-right bleu-plus font-bold">+7.55</td>
+                    </tr>
+                    <tr>
+                      <td class="px-3 py-2">韩语 (ko)</td>
+                      <td class="px-3 py-2 text-right">47.21</td>
+                      <td class="px-3 py-2 text-right font-medium">54.59</td>
+                      <td class="px-3 py-2 text-right bleu-plus font-bold">+7.38</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- 状态总览 -->
+            <div>
+              <p class="font-semibold text-gray-900 text-sm">关键事项状态</p>
+              <div class="mt-2 space-y-1.5 text-xs">
+                <div class="flex items-center justify-between rounded-lg bg-gray-50 px-3 py-2">
+                  <span>B2B 货单发货工具（微信/飞书/采集）</span>
+                  <span class="tag-done px-2 py-0.5 rounded-full">完成</span>
+                </div>
+                <div class="flex items-center justify-between rounded-lg bg-gray-50 px-3 py-2">
+                  <span>MTPE 小语种询价</span>
+                  <span class="tag-done px-2 py-0.5 rounded-full">完成</span>
+                </div>
+                <div class="flex items-center justify-between rounded-lg bg-gray-50 px-3 py-2">
+                  <span>需求验收流程自动化</span>
+                  <span class="tag-done px-2 py-0.5 rounded-full">完成</span>
+                </div>
+                <div class="flex items-center justify-between rounded-lg bg-gray-50 px-3 py-2">
+                  <span>补提文案流程自动化 v5.91</span>
+                  <span class="tag-done px-2 py-0.5 rounded-full">完成</span>
+                </div>
+                <div class="flex items-center justify-between rounded-lg bg-gray-50 px-3 py-2">
+                  <span>AI-TQA 英日韩俄模型调试</span>
+                  <span class="tag-wip px-2 py-0.5 rounded-full">进行中</span>
+                </div>
+                <div class="flex items-center justify-between rounded-lg bg-gray-50 px-3 py-2">
+                  <span>Crowdin 记忆库合并清洗</span>
+                  <span class="tag-todo px-2 py-0.5 rounded-full">未开始（5月中）</span>
+                </div>
+                <div class="flex items-center justify-between rounded-lg bg-gray-50 px-3 py-2">
+                  <span>RDC/Deyi 打通</span>
+                  <span class="tag-delay px-2 py-0.5 rounded-full">Delay → v.594</span>
+                </div>
+                <div class="flex items-center justify-between rounded-lg bg-gray-50 px-3 py-2">
+                  <span>LQA 自动化修复（v5.93）</span>
+                  <span class="tag-todo px-2 py-0.5 rounded-full">未开始（5月）</span>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <p class="font-semibold text-gray-900">Gap</p>
+              <ul class="mt-1 space-y-1 list-disc list-inside text-xs text-gray-700">
+                <li>RDC/Deyi 打通 delay 至 v.594，流程自动化率提升受阻。</li>
+                <li>记忆库合并清洗尚未开始，记忆库可用率目标存在风险。</li>
+                <li>AI-TQA 报告自动汇总功能尚未开始。</li>
+                <li>视频配音和字幕 AI 翻译能力 SOP 尚未梳理。</li>
+              </ul>
+            </div>
+
+            <div>
+              <p class="font-semibold text-gray-900">下月计划</p>
+              <ul class="mt-1 space-y-1 list-disc list-inside text-xs text-gray-700">
+                <li>推进 RDC/Deyi 打通，随 v.594 上线需求自动导入。</li>
+                <li>启动 Crowdin 记忆库合并清洗（5 月中）。</li>
+                <li>完成 AI-TQA 报告自动生成汇总工具搭建。</li>
+                <li>推进 LQA 自动化修复（随 v5.93 基建上线）。</li>
+                <li>梳理视频配音和字幕翻译 SOP，提升 AI 翻译效率。</li>
+                <li>持续推进智能客服机器人评测问题优化（卖家侧评测完成）。</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    (function() {
+      var ids = ["hero","highlights","sec1","sec2","sec3","sec4","sec5"];
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: "-40px 0px", threshold: 0 });
+      ids.forEach(function(id, i) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        el.style.transitionDelay = (Math.min(i * 0.06, 0.28)) + "s";
+        observer.observe(el);
+      });
+    })();
+  </script>
+</body>
+</html>
